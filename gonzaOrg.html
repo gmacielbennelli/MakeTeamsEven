@@ -1,0 +1,40 @@
+<template>
+    <template if:true={teamA}>
+        <lightning-card title="Team A">
+            <template for:each={teamA} for:item="team" for:index="index">
+                <div key={team} class="option2">
+                    <div class="div-if-true">
+                        <div class="card text-center">
+                            <div class="option">
+                                <p>{team.Name}</p><br>
+                                <p>{team.Puntaje__c}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </lightning-card>
+    </template>
+    <template if:false={teamA}>
+        <P>No hay data</P>
+    </template>
+    <template if:true={teamB}>
+        <lightning-card title="Team B">
+            <template for:each={teamB} for:item="team" for:index="index">
+                <div key={team} class="option2">
+                    <div class="div-if-true">
+                        <div class="card text-center">
+                            <div class="option">
+                    <p>{team.Name}</p> <br>
+                    <p>{team.Puntaje__c}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+            </template>
+        </lightning-card>
+    </template>
+    <p slot="footer">
+        <lightning-button label="Refresh" onclick={refreshComponent}></lightning-button>
+    </p>
+</template>
